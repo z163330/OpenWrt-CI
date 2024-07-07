@@ -9,14 +9,19 @@
 
 name: OpenWrt
 
+# on:
+#   push:
+#     branches: 
+#       - master
+#   schedule:
+#     - cron: 0 0 1 * *
+#   watch:
+#     types: started
 on:
+  workflow_dispatch:
   push:
     branches: 
-      - master
-  schedule:
-    - cron: 0 0 1 * *
-  watch:
-    types: started
+     [ main ]
 
 jobs:
   build:
